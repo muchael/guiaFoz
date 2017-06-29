@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :itineraries
   resources :tags
   resources :attractions
   resources :places
