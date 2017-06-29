@@ -1,0 +1,52 @@
+<%= form_with(model: attraction, local: true) do |form| %>
+  <% if attraction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(attraction.errors.count, "error") %> prohibited this attraction from being saved:</h2>
+
+      <ul>
+      <% attraction.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :attraction_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :duration %>
+    <%= form.time_select :duration, id: :attraction_duration %>
+  </div>
+
+  <div class="field">
+    <%= form.label :travel_time %>
+    <%= form.time_select :travel_time, id: :attraction_travel_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :adult_price %>
+    <%= form.text_field :adult_price, id: :attraction_adult_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :adults_only %>
+    <%= form.check_box :adults_only, id: :attraction_adults_only %>
+  </div>
+
+  <div class="field">
+    <%= form.label :picture %>
+    <%= form.text_field :picture, id: :attraction_picture %>
+  </div>
+
+  <div class="field">
+    <%= form.label :place_id %>
+    <%= form.text_field :place_id, id: :attraction_place_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

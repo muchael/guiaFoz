@@ -44,3 +44,4 @@ gem "rb-fsevent", "0.9.8"
 
 gem 'devise'
 gem 'kaminari'
+gem 'annotate'

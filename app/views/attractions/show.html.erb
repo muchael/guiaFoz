@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @attraction.name %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @attraction.duration %>
+</p>
+
+<p>
+  <strong>Travel time:</strong>
+  <%= @attraction.travel_time %>
+</p>
+
+<p>
+  <strong>Adult price:</strong>
+  <%= @attraction.adult_price %>
+</p>
+
+<p>
+  <strong>Adults only:</strong>
+  <%= @attraction.adults_only %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @attraction.picture %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @attraction.place %>
+</p>
+
+<%= link_to 'Edit', edit_attraction_path(@attraction) %> |
+<%= link_to 'Back', attractions_path %>

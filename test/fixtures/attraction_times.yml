@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  weekday: 1
+  start_time: 2017-06-29 13:28:53
+  holidays: false
+  attraction: one
+
+two:
+  weekday: 1
+  start_time: 2017-06-29 13:28:53
+  holidays: false
+  attraction: two

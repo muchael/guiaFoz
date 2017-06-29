@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  duration: 2017-06-29 13:26:47
+  travel_time: 2017-06-29 13:26:47
+  adult_price: 
+  adults_only: false
+  picture: MyString
+  place: one
+
+two:
+  name: MyString
+  duration: 2017-06-29 13:26:47
+  travel_time: 2017-06-29 13:26:47
+  adult_price: 
+  adults_only: false
+  picture: MyString
+  place: two

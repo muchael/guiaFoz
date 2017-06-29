@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tags
+  resources :attractions
   resources :places
   root to: 'home#show'
 
