@@ -1,6 +1,6 @@
 const angular = require('angular');
 const module = require('./module');
-require('bootstrap/dist/css/bootstrap.css');
+require('angular-material/angular-material.css');
 
 module.constant('$STATES', {
     HOME: 'home',

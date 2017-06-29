@@ -1,5 +1,5 @@
 const deps = [
-    require('angular-ui-bootstrap'),
+    require('angular-material'),
     require('angular-ui-router')
 ];
 

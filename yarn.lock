@@ -75,17 +75,25 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
-angular-animate@1.6.4:
+angular-animate@^1.6.4:
   version "1.6.4"
   resolved "https://registry.yarnpkg.com/angular-animate/-/angular-animate-1.6.4.tgz#d3eb906d39834f2dfbdd982e6b8d7a3b4d9001d2"
+
+angular-aria@^1.6.4:
+  version "1.6.4"
+  resolved "https://registry.yarnpkg.com/angular-aria/-/angular-aria-1.6.4.tgz#c8683666ace196668f68e7220811bdcfc9e106e4"
+
+angular-material@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/angular-material/-/angular-material-1.1.4.tgz#27de35646f54ccd320080af0c708e1b438af87f6"
+
+angular-messages@^1.6.4:
+  version "1.6.4"
+  resolved "https://registry.yarnpkg.com/angular-messages/-/angular-messages-1.6.4.tgz#9ec9c1393293b14de54161d2f849776489e980fe"
 
 angular-touch@1.6.4:
   version "1.6.4"
   resolved "https://registry.yarnpkg.com/angular-touch/-/angular-touch-1.6.4.tgz#02750fccf77ca0ed949a6d1321263abb0f86b223"
-
-angular-ui-bootstrap@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/angular-ui-bootstrap/-/angular-ui-bootstrap-2.5.0.tgz#2facefb915386655dc5f44150258032517236d01"
 
 angular-ui-router@0:
   version "0.4.2"
@@ -2433,6 +2441,10 @@ isobject@^3.0.0:
 isstream@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
+
+jquery@2:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-2.2.4.tgz#2c89d6889b5eac522a7eea32c14521559c6cbf02"
 
 js-base64@^2.1.8, js-base64@^2.1.9:
   version "2.1.9"
