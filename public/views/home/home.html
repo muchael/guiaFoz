@@ -1,2 +1,40 @@
 <ng-include src="'/views/home/menu-nav.html'"></ng-include>
+<div class="container">
+    <div>
+    <!--<img src="images/guiaFoz.png" class="img-responsive">-->
+    </div>
+
+    <div layout="column" flex layout-fill>
+        <div layout="row" layout-align="center center" flex style="margin-bottom: 50px;">
+            <div layout="row" layout-align="end center" flex>
+                <label>De:</label>
+                <md-datepicker ng-model="model.filter.arrival"></md-datepicker>
+            </div>
+            <div layout="row" layout-align="start center" flex>
+                <label>Até:</label>
+                <md-datepicker ng-model="model.filter.departure"></md-datepicker>
+            </div>
+        </div>
+        <div layout="row" class="container-check-button" flex layout-wrap>
+            <div class="ckeck-button md-whiteframe-1dp" ng-repeat="tag in tags">
+                <label>
+                    <input type="checkbox" value="{{tag.id}}" ng-model="model.tagsSelected[tag.id]"><span>{{tag.name}}</span>
+                </label>
+            </div>
+        </div>
+
+        <div layout="row" flex layout-align="center center" style="margin-bottom: 50px;">
+            <md-input-container class="md-block">
+                <label>Orçamento</label>
+                <input type="number" min="1" max="99999" ng-model="model.filter.budget" style="width: 160px;">
+            </md-input-container>
+        </div>
+
+        <div layout="row" flex layout-align="center center">
+            <md-button class="md-raised md-primary" ng-click="findItineraryGuide()">
+                Buscar
+            </md-button>
+        </div>
+    </div>
+</div>
 
