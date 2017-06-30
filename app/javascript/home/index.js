@@ -43,7 +43,7 @@ module.controller('AttractionDetailController', require('./controllers/attractio
 // Ativa o service Worker
 if ('serviceWorker' in navigator && (window.location.protocol === 'http:' || window.location.hostname === 'localhost')) {
 
-  navigator.serviceWorker.register('service-worker.js', {
+  navigator.serviceWorker.register('./service-worker.js', {
     scope: './'
   }).then(function(registration) {
     if (typeof registration.update == 'function') {
