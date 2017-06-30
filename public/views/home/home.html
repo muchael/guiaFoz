@@ -1,12 +1,18 @@
 <!--<ng-include src="'/views/home/menu-nav.html'"></ng-include>-->
 <div layout="column">
-    
-    <div layout="column" layout-align="center center" style="background-image:url('/images/BG-GUIA-FOZ.png'); background-repeat: no-repeat; height: 100%">
-        
-        <md-content style="height: 45%; background: white" class="md-whiteframe-1dp container" layout="column" >
 
-            <span class="strong-title">Período</span>
-            <div layout="row" layout-align="start start" flex style="margin-top: 25px">
+    <div layout="column" layout-align="center center" style="background-image:url('/images/BG-GUIA-FOZ.png'); background-repeat: no-repeat; height: 100%">
+
+        <md-content style="min-height: 45%;max-height: 90%; max-width: 90%; background: white; padding: 0;" class="md-whiteframe-1dp container"
+            layout-padding layout="column">
+
+            <div layout-margin>
+                <span class="strong-title">Período</span>
+            </div>
+
+            <div layout-gt-xs="row" layout-margin layout-align="start start" flex style="margin-top: 25px">
+
+
                 <div layout="row" layout-align="start center" flex>
                     <label>De:</label>
                     <md-datepicker ng-model="model.filter.arrival"></md-datepicker>
@@ -17,22 +23,30 @@
                     <md-datepicker ng-model="model.filter.departure"></md-datepicker>
                 </div>
 
-                <md-input-container style="margin: 0px 0px 0px 10px !important;" class="md-block" flex="50">
-                    <input type="number" min="1" max="99999" ng-model="model.filter.budget" flex>
-                </md-input-container>
+
+                <div flex-gt-xs="50" layout-margin>
+                    <span class="strong-title">Orçamento</span>
+                    <md-input-container placeholder="asdasd" style="margin: 0px 0px 0px 10px !important;" class="md-block" flex>
+                        <input type="number" min="1" max="99999" ng-model="model.filter.budget" flex>
+                    </md-input-container>
+                </div>
             </div>
 
             <md-divider></md-divider>
 
-            <span class="strong-title">Período</span>
+            <span class="strong-title">Interesses</span>
 
-            <div layout="row" flex layout-wrap>
-                <md-button ng-click="tag.selected = !tag.selected" ng-style="tag.selected && { 'background-color': '#7fd7ff' }" style="height: 35px; color:black; font-size: 10px; background-color: #efefef;" ng-repeat="tag in tags" class="md-raised md-primary" >
-                    {{tag.name}}
-                </md-button>
+            <div layout="column" flex>
+
+                <div layout="row" flex layout-wrap layout-align="center center">
+                    <md-button ng-click="tag.selected = !tag.selected" ng-style="tag.selected && { 'background-color': '#7fd7ff' }" style="height: 35px; color:black; font-size: 10px; background-color: #efefef;"
+                        ng-repeat="tag in tags" class="md-raised md-primary">
+                        {{tag.name}}
+                    </md-button>
+                </div>
             </div>
 
-            <div layout="row" flex >
+            <div layout="row" flex>
                 <md-button style="background-color: #00a1f6" flex class="md-raised md-primary" ng-click="findItineraryGuide()">
                     Buscar
                 </md-button>
@@ -41,4 +55,3 @@
         </md-content>
     </div>
 </div>
-

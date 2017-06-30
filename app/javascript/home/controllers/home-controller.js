@@ -1,7 +1,7 @@
 const mod = require('../module');
 require('./home-controller.css');
 
-module.exports = function HomeController($scope, $mdSidenav, $state, $STATES) {
+module.exports = function HomeController($scope, $mdSidenav, $state, $STATES, $http) {
 
     $scope.model = {
         filter: {
@@ -13,23 +13,21 @@ module.exports = function HomeController($scope, $mdSidenav, $state, $STATES) {
         tagsSelected: {}
     };
 
-    $scope.tags = [
-        {id: 1,name: 'Natureza', selected:false},
-        {id:2,name:'Gastronomia', selected:false},
-        {id:3,name:'Vida Noturna', selected:false},
-        {id:4,name:'Romântico', selected:false},
-        {id:5,name:'Aventura', selected:false},
-        {id:6,name:'Cultural', selected:false},
-        {id:7,name:'Família', selected:false},
-        {id:8,name:'Populares', selected:false}
-        ];
+    $scope.tags = [];
+
+    $http.get('/tags.json').then(function(data) {
+        $scope.tags = data.data;
+        $scope.tags.forEach(function(tag) {
+            tag.selected = false;
+        });
+    });
 
     $scope.findItineraryGuide = function () {
 
         $scope.model.filter.tag_ids = [];
 
         angular.forEach($scope.tags,function (tag) {
-            if( $scope.model.tagsSelected[tag.id] ) {
+            if( tag.selected ) {
                 $scope.model.filter.tag_ids.push(tag.id);
             }
         });

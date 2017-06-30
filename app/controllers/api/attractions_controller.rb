@@ -6,4 +6,9 @@ class Api::AttractionsController < ApplicationController
     tag_ids = params[:tag_ids].map(&:to_i)
     @attractions_by_day = Attraction.query(arrival, departure, budget, tag_ids)
   end
+
+  def alternative_to
+    itinerary_id = params[:itinerary_id]
+    attraction_id = params[:attraction_id]
+  end
 end
