@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :api do
     post 'attractions/query'
+    post 'attractions/like/:id', to: 'attractions#like'
   end
 
   resources :itineraries

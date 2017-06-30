@@ -16,10 +16,10 @@
 
     <div layout-margin>
         <h1> {{attraction.name}} </h1>
-        <p ng-if="attraction.duration"> Tempo de duração: {{attraction.duration}} </p>
-        <p ng-if="attraction.start_time"> Horário: {{attraction.start_time}} </p>
+        <p ng-if="attraction.duration"> Tempo de duração: {{formatHm(attraction.start_time)}} </p>
+        <p ng-if="attraction.start_time"> Horário: {{formatHm(attraction.duration)}}</p>
         <p ng-if="attraction.description"> Descrição: {{attraction.description}} </p>
         <p ng-if="attraction.observations"> Observações {{attraction.observations}} </p>
-        <p ng-if="attraction.adult_price"> Preço: {{attraction.adult_price}} </p>
+        <p ng-if="attraction.adult_price"> Preço: {{formatPrice(attraction.adult_price)}} </p>
     </div>
 </div>

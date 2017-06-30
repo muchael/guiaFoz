@@ -5,7 +5,7 @@ json.attractions do
     json.periods do
       json.array! day[:periods] do |period|
         json.array! period do |attraction|
-          json.extract! attraction, :id, :name, :duration, :start_time, :adult_price, :adults_only, :picture, :description, :observations
+          json.extract! attraction, :id, :name, :duration, :start_time, :adult_price, :adults_only, :picture, :description, :observations, :likes
           json.place do
             json.extract! attraction.place, :id, :name, :picture, :phone, :website
           end

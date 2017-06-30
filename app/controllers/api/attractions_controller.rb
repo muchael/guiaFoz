@@ -7,8 +7,9 @@ class Api::AttractionsController < ApplicationController
     @attractions_by_day = Attraction.query(arrival, departure, budget, tag_ids)
   end
 
-  def alternative_to
-    itinerary_id = params[:itinerary_id]
-    attraction_id = params[:attraction_id]
+  def like
+    AttractionLike.create!(attraction_id: params[:id])
+
+    render json: {likes: AttractionLike.where(attraction_id: params[:id]).count}
   end
 end
