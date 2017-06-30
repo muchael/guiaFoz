@@ -1,6 +1,9 @@
 const angular = require('angular');
 const module = require('./module');
+require('jquery/dist/jquery');
 require('angular-material/angular-material.css');
+require('material-design-iconic-font/dist/fonts/Material-Design-Iconic-Font.woff');
+require('material-design-iconic-font/dist/css/material-design-iconic-font.css');
 
 module.constant('$STATES', {
     HOME: 'home',
