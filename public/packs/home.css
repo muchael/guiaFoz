@@ -1,5 +1,64 @@
 .selected-star {
   color: red !important;
+}md-toolbar.main-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container {
+  padding: 10px 50px 20px 50px;
+  overflow: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+._md-datepicker-has-triangle-icon {
+  margin-right: 0;
+}
+
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+
+.container-check-button {
+  margin-bottom: 50px;
+}
+
+.ckeck-button {
+  height: 115px;
+  width: 115px;
+  cursor: pointer;
+  margin: 10px 20px 0 0;
+  background-color: #FFFFFF;
+}
+
+.ckeck-button span {
+  height: 115px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 5px;
+}
+
+.ckeck-button label input {
+  position: absolute;
+  top: -20px;
+}
+
+.ckeck-button input:checked + span {
+  background: #55A4E2;
+  color: #FFFFFF;
 }/*!
  *  Material Design Iconic Font by Sergey Kupletsky (@zavoloklom) - http://zavoloklom.github.io/material-design-iconic-font/
  *  License - http://zavoloklom.github.io/material-design-iconic-font/license (Font: SIL OFL 1.1, CSS: MIT License)
