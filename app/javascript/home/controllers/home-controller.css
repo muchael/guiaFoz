@@ -1,3 +1,11 @@
+html, body, .ng-scope {
+  height: 100%;
+}
+
+.strong-title{
+    font-weight: bold;
+}
+
 md-toolbar.main-menu {
     display: flex;
     justify-content: center;
