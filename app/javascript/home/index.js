@@ -1,5 +1,6 @@
 const angular = require('angular');
 const module = require('./module');
+const moment = require('moment');
 require('jquery/dist/jquery');
 require('angular-material/angular-material.css');
 require('material-design-iconic-font/dist/fonts/Material-Design-Iconic-Font.woff');
@@ -10,7 +11,15 @@ module.constant('$STATES', {
     SEARCH: 'search'
 });
 
-module.config(function($stateProvider, $urlRouterProvider, $STATES) {
+module.config(function($stateProvider, $urlRouterProvider, $mdDateLocaleProvider, $STATES) {
+
+    $mdDateLocaleProvider.formatDate = function(date) {
+        moment.locale(navigator.language.toLowerCase());
+        var m = moment(date);
+        return m.isValid() ? m.format('L') : '';
+        // return moment(date).format('DD/MM/YYYY');
+    };
+
     $urlRouterProvider.otherwise('/');
 
     $stateProvider.state($STATES.HOME, {
