@@ -96,6 +96,14 @@ md-toolbar.main-menu {
 .ckeck-button input:checked + span {
   background: #55A4E2;
   color: #FFFFFF;
+}
+
+.title-container {
+  text-align: center;
+  margin-top: -20px;
+  color: rgba(255, 255, 255, 0.87);
+  text-transform: uppercase;
+  font-weight: 100;
 }/*!
  *  Material Design Iconic Font by Sergey Kupletsky (@zavoloklom) - http://zavoloklom.github.io/material-design-iconic-font/
  *  License - http://zavoloklom.github.io/material-design-iconic-font/license (Font: SIL OFL 1.1, CSS: MIT License)
