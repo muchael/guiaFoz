@@ -6,23 +6,21 @@
         <div flex layout="row">
             <div layout="column" layout-margin>
                 <div style="font-weight: bold">{{attraction.name}}</div>
-                <div layout="row">
-                    <md-icon class="zmdi zmdi-thumb-up zmdi-hc-2x selected-star"></md-icon>
-                    <span flex></span>
-                    <span class="md-subhead">2050</span>
-                    <span flex></span> <span flex></span> <span flex></span>
+
+                <div layout="column">
+                    <span>Horário de início</span>
+                    <span>{{formatHm(attraction.duration)}}Hs</span>
                 </div>
-                <div>Endereço: Av das Cataratas, 1</div>
-                <div>Duração: {{attraction.duration}} horas</div>
-                <div>Valor: {{attraction.adult_price | currency:"R$ "}}*</div>
+                <div layout="column">
+                    <span>Valor</span>
+                    <span style="color: #00a1f6; font-weight: bold;">{{attraction.adult_price | currency:"R$ "}}</span>
+                </div>
+                
             </div>
             <span flex></span>
             <md-card-actions layout="column">
-                <md-button class="md-icon-button" style="color: green" aria-label="Favorite">
+                <md-button class="md-icon-button md-raised" style="background-color: #00a1f6;" aria-label="Favorite">
                     <md-icon class="zmdi zmdi-check zmdi-hc-2x"></md-icon>
-                </md-button>
-                <md-button class="md-icon-button" style="color: red" aria-label="Settings">
-                    <md-icon class="zmdi zmdi-close zmdi-hc-2x"></md-icon>
                 </md-button>
             </md-card-actions>
         </div>
