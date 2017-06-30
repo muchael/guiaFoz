@@ -50,7 +50,8 @@ module.exports = function SearchController($scope, $mdSidenav, $state, $http, $S
      *
      * @param attraction
      */
-    $scope.likeAttraction = function(attraction) {
+    $scope.likeAttraction = function(attraction, event) {
+        event.stopPropagation();
         $http.post('/api/attractions/like/' + attraction.id).then(function(data) {
             attraction.liked = true;
             attraction.likes = data.data.likes;

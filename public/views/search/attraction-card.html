@@ -15,10 +15,9 @@
                     <span style="margin-bottom: 5px;">Valor</span>
                     <span style="color: #00a1f6; font-weight: bold;">{{attraction.adult_price | currency:"R$ "}}</span>
                 </div>
-                <div>
-                    <md-button class="md-icon-button md-raised" style="background-color: #00a1f6;" aria-label="Favorite">
-                    <md-icon class="zmdi zmdi-thumb-up zmdi-hc-2x"></md-icon>
-                    </md-button>
+                <div layout="row" layout-align="start center" style="font-size:13px; color:#949494; display:flex; align-items:center;">
+                    <md-icon class="zmdi zmdi-thumb-up zmdi-hc-2x" style="margin:0 15px 0 0;" ng-click="!attraction.liked && likeAttraction(attraction, $event)"></md-icon>
+                    <span>{{attraction.likes}} pessoas curtiram</span>
                 </div>
 
                 <div layout="row" layout-wrap>
