@@ -103,7 +103,12 @@ md-toolbar.main-menu {
   margin-top: -20px;
   color: rgba(255, 255, 255, 0.87);
   text-transform: uppercase;
-  font-weight: 100;
+}
+
+@media (max-width: 960px) {
+  .title-container > h2 {
+    display: none;
+  }
 }/*!
  *  Material Design Iconic Font by Sergey Kupletsky (@zavoloklom) - http://zavoloklom.github.io/material-design-iconic-font/
  *  License - http://zavoloklom.github.io/material-design-iconic-font/license (Font: SIL OFL 1.1, CSS: MIT License)
