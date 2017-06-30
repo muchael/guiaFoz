@@ -2,7 +2,7 @@ const mod = require('../module');
 require('./search-controller.css');
 const moment = require('moment');
 
-module.exports = function SearchController($scope, $mdSidenav, $state, $http, $STATES) {
+module.exports = function SearchController($scope, $mdSidenav, $state, $http, $STATES, $window) {
 
     $scope.loading = true;
     $scope.attraction = {};
@@ -61,6 +61,10 @@ module.exports = function SearchController($scope, $mdSidenav, $state, $http, $S
     $scope.toggleMenuSideNavHandler = function () {
         console.log("toggleMenuSideNavHandler");
         // $mdSidenav('menuSideNav').toggle();
+    };
+
+    $scope.goToHome = function() {
+        $window.location.href = '/';
     };
 
 

@@ -1,7 +1,7 @@
 {
-  "Material-Design-Iconic-Font.ttf": "/packs/Material-Design-Iconic-Font.ttf",
-  "Material-Design-Iconic-Font.woff": "/packs/Material-Design-Iconic-Font.woff",
-  "Material-Design-Iconic-Font.woff2": "/packs/Material-Design-Iconic-Font.woff2",
-  "home.css": "/packs/home.css",
-  "home.js": "/packs/home.js"
+  "Material-Design-Iconic-Font.ttf": "http://localhost:8080/packs/Material-Design-Iconic-Font.ttf",
+  "Material-Design-Iconic-Font.woff": "http://localhost:8080/packs/Material-Design-Iconic-Font.woff",
+  "Material-Design-Iconic-Font.woff2": "http://localhost:8080/packs/Material-Design-Iconic-Font.woff2",
+  "home.css": "http://localhost:8080/packs/home.css",
+  "home.js": "http://localhost:8080/packs/home.js"
 }

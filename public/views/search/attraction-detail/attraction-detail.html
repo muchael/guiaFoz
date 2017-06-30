@@ -18,17 +18,17 @@
         <div style="margin-bottom: 10px;">
             <h1> {{attraction.name}} </h1>
         </div>
-        <p ng-if="attraction.duration"> Tempo de duração: {{formatHm(attraction.start_time)}} </p>
-        <p ng-if="attraction.start_time"> Horário: {{formatHm(attraction.duration)}}</p>
+        <p ng-if="attraction.duration"> <b>Tempo de duração:</b> {{formatHm(attraction.start_time)}} </p>
+        <p ng-if="attraction.start_time"> <b>Horário:</b> {{formatHm(attraction.duration)}}</p>
 
         <div ng-if="attraction.description">
-            <p> Descrição </p>
-            <p> {{attraction.description}} </p>
+            <p><b>Descrição</b></p>
+            <p style="text-align: justify;"> {{attraction.description}} </b></p>
         </div>
 
         <div ng-if="attraction.observations">
-            <p > Observações </p>
-            <p > {{attraction.observations}} </p>
+            <p><b>Observações </b></p>
+            <p style="text-align: justify;"> {{attraction.observations}} </p>
         </div>
 
         <p ng-if="attraction.adult_price"><b> Preço: {{formatPrice(attraction.adult_price)}} </b></p>
