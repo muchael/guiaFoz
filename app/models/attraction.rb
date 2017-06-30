@@ -29,15 +29,24 @@ class Attraction < ApplicationRecord
 
     seen_ids = [-1]
 
-    (0..length).to_a.map do |offset|
+    attractions_by_day = (0..length).to_a.map do |offset|
       day = arrival + offset.days
       weekday_number = AttractionTime.weekdays.to_a.select{|k,_v| day.send(k + '?')}[0][1]
 
       times = start_times.map do |start_time, end_time|
-        attractions = Attraction.find_by_sql([<<EOF, {weekday: weekday_number, start_time: start_time, end_time: end_time, split_budget: split_budget, seen_ids: seen_ids, tag_ids: tag_ids}])
+        params = {
+            weekday: weekday_number,
+            start_time: start_time,
+            end_time: end_time,
+            split_budget: split_budget,
+            seen_ids: seen_ids,
+            tag_ids: tag_ids
+        }
+        attractions = Attraction.find_by_sql([<<EOF, params])
 SELECT
   attractions.*,
-  attraction_times.start_time
+  attraction_times.start_time,
+  attraction_times.id as time_id
 FROM
   attractions
 JOIN attraction_times ON attraction_times.id = (
@@ -55,6 +64,17 @@ EOF
         attractions
       end
       {day: day, periods: times}
+    end
+
+    # agora que já listamos de maneira agrupada os atrativos, vamos salvar o itinerário
+
+    transaction do
+      itinerary = Itinerary.new(start: arrival, end: departure)
+      itinerary.save
+      flattened_days = attractions_by_day.map{|x| x[:periods].map{|y| y[0]}}.flatten.map{|x|
+        time = AttractionTime.find(x.time_id)
+        ItineraryAttraction.create(itinerary: itinerary, attraction_time: time, start: Time.now) #FIXME
+      }
     end
   end
 end
