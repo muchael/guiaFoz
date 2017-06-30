@@ -15,11 +15,22 @@
     </div>
 
     <div layout-margin>
-        <h1> {{attraction.name}} </h1>
+        <div style="margin-bottom: 10px;">
+            <h1> {{attraction.name}} </h1>
+        </div>
         <p ng-if="attraction.duration"> Tempo de duração: {{formatHm(attraction.start_time)}} </p>
         <p ng-if="attraction.start_time"> Horário: {{formatHm(attraction.duration)}}</p>
-        <p ng-if="attraction.description"> Descrição: {{attraction.description}} </p>
-        <p ng-if="attraction.observations"> Observações {{attraction.observations}} </p>
-        <p ng-if="attraction.adult_price"> Preço: {{formatPrice(attraction.adult_price)}} </p>
+
+        <div ng-if="attraction.description">
+            <p> Descrição </p>
+            <p> {{attraction.description}} </p>
+        </div>
+
+        <div ng-if="attraction.observations">
+            <p > Observações </p>
+            <p > {{attraction.observations}} </p>
+        </div>
+
+        <p ng-if="attraction.adult_price"><b> Preço: {{formatPrice(attraction.adult_price)}} </b></p>
     </div>
 </div>
