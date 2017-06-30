@@ -1,16 +1,14 @@
-<div layout="column" ng-cloak>
+<div layout="column" ng-cloak >
     <section layout="row" flex>
-        <md-sidenav class="md-sidenav-right" md-component-id="right" md-disable-backdrop md-whiteframe="4">
+        <md-sidenav style="position: fixed" class="md-sidenav-right" md-component-id="right" md-disable-backdrop md-whiteframe="4">
             <md-content>
                 <ng-include src="'/views/search/attraction-detail/attraction-detail.html'"></ng-include>
             </md-content>
         </md-sidenav>
         <md-content flex layout-padding>
             <div>
-                
                 <div>
                     <h2 style="text-align: center;">O que fazer?</h2>
-
                 </div>
                 <div ng-repeat="day in roteiro">
                     <div style="padding-left: 30px;">Dia {{day.day | date: 'dd/MM/yyyy'}}</div>

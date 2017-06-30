@@ -186,6 +186,7 @@ DEPENDENCIES
   pg (~> 0.18)
   puma (~> 3.7)
   rails (~> 5.1.2)
+  rake
   rb-fsevent (= 0.9.8)
   selenium-webdriver
   tzinfo-data
