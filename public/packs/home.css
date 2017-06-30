@@ -1,5 +1,6 @@
-.selected-star {
-  color: red !important;
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }md-toolbar.main-menu {
   display: -webkit-box;
   display: -ms-flexbox;
