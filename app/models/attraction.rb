@@ -48,7 +48,8 @@ class Attraction < ApplicationRecord
 SELECT
   attractions.*,
   attraction_times.start_time,
-  attraction_times.id as time_id
+  attraction_times.id as time_id,
+  (select count(*) from attraction_likes where attraction_id = attractions.id) as likes
 FROM
   attractions
 JOIN attraction_times ON attraction_times.id = (
@@ -59,8 +60,10 @@ WHERE
   EXISTS (SELECT 1 FROM attraction_tags WHERE attraction_id = attractions.id AND tag_id IN (:tag_ids)) AND
   attractions.id NOT IN (:seen_ids)
 ORDER BY
-  abs(:split_budget - adult_price) -- AND count(*) from feedbacks
-LIMIT 20
+  weight,
+  abs(:split_budget - adult_price),
+  (select count(*) from attraction_likes where attraction_id = attractions.id) desc
+LIMIT 1
 EOF
         seen_ids.push(attractions[0] && attractions[0].id)
         attractions.each{|x| x.start_day = day}

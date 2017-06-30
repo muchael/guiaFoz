@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170630015006) do
+ActiveRecord::Schema.define(version: 20170630143140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attraction_likes", force: :cascade do |t|
+    t.bigint "attraction_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["attraction_id"], name: "index_attraction_likes_on_attraction_id"
+  end
 
   create_table "attraction_tags", force: :cascade do |t|
     t.bigint "tag_id", null: false
@@ -46,6 +53,7 @@ ActiveRecord::Schema.define(version: 20170630015006) do
     t.datetime "updated_at", null: false
     t.text "description"
     t.text "observations"
+    t.integer "weight", default: 0
     t.index ["place_id"], name: "index_attractions_on_place_id"
   end
 
@@ -92,6 +100,7 @@ ActiveRecord::Schema.define(version: 20170630015006) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "attraction_likes", "attractions"
   add_foreign_key "attraction_tags", "attractions"
   add_foreign_key "attraction_tags", "tags"
   add_foreign_key "attraction_times", "attractions"

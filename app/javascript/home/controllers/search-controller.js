@@ -39,8 +39,22 @@ module.exports = function SearchController($scope, $mdSidenav, $state, $http, $S
     };
 
     $scope.formatHm = function(duration) {
-
         return moment(duration).format("hh:mm");
+    };
+
+    $scope.formatPrice = function(price) {
+        return 'R$ ' + (+price).toFixed(2).replace('.', ',');
+    };
+
+    /**
+     *
+     * @param attraction
+     */
+    $scope.likeAttraction = function(attraction) {
+        $http.post('/api/attractions/like/' + attraction.id).then(function(data) {
+            attraction.liked = true;
+            attraction.likes = data.data.likes;
+        });
     };
 
     $scope.toggleMenuSideNavHandler = function () {
