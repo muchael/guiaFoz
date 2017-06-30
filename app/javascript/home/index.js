@@ -11,7 +11,7 @@ module.constant('$STATES', {
     SEARCH: 'search'
 });
 
-module.config(function($stateProvider, $urlRouterProvider, $mdDateLocaleProvider, $STATES) {
+module.config(['$stateProvider', '$urlRouterProvider', '$mdDateLocaleProvider', '$STATES', function($stateProvider, $urlRouterProvider, $mdDateLocaleProvider, $STATES) {
 
     $mdDateLocaleProvider.formatDate = function(date) {
         moment.locale(navigator.language.toLowerCase());
@@ -31,7 +31,7 @@ module.config(function($stateProvider, $urlRouterProvider, $mdDateLocaleProvider
         templateUrl: '/views/search/search.html',
         controller: 'SearchController'
     });
-});
+}]);
 
 module.controller('HomeController', require('./controllers/home-controller'));
 module.controller('SearchController', require('./controllers/search-controller'));
