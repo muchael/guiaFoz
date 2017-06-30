@@ -13,13 +13,13 @@
                 <div ng-repeat="day in roteiro">
                     <div style="padding-left: 30px;">Dia {{day.day | date: 'dd/MM/yyyy'}}</div>
                     <div style="padding-left: 30px;">Manhã</div>
-                    <md-content class="md-padding" layout-xs="column" layout="row" ng-repeat="attraction in day.periods[0]" ng-include="'views/search/attraction-card.html'">
+                    <md-content class="md-padding" layout-xs="column" layout="row" ng-repeat="attraction in day.periods[0]" ng-if="$index == 0" ng-include="'views/search/attraction-card.html'">
                     </md-content>
                     <div style="padding-left: 30px;">Tarde</div>
-                    <md-content class="md-padding" layout-xs="column" layout="row" ng-repeat="attraction in day.periods[1]" ng-include="'views/search/attraction-card.html'">
+                    <md-content class="md-padding" layout-xs="column" layout="row" ng-repeat="attraction in day.periods[1]" ng-if="$index == 0" ng-include="'views/search/attraction-card.html'">
                     </md-content>
                     <div style="padding-left: 30px;">Noite</div>
-                    <md-content class="md-padding" layout-xs="column" layout="row" ng-repeat="attraction in day.periods[2]" ng-include="'views/search/attraction-card.html'">
+                    <md-content class="md-padding" layout-xs="column" layout="row" ng-repeat="attraction in day.periods[2]" ng-if="$index == 0" ng-include="'views/search/attraction-card.html'">
                     </md-content>
 
                 </div>
