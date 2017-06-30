@@ -11,7 +11,11 @@
         </div>
     </md-toolbar>
 
-    <div layout="column" layout-align="center center" style="background-image:url('/images/BG-GUIA-FOZ.png'); background-repeat: no-repeat; height: 100%">
+    <div layout="column" layout-align="center center" style="background-image:url('/images/BG-GUIA-FOZ.png'); 
+     background-repeat: no-repeat;
+     background-position: 50%;
+      background-size: cover;
+      height: 100%">
 
 
         <md-content style="min-height: 45%;max-height: 95%; max-width: 95%; background: white; padding: 0;" class="md-whiteframe-1dp container"
@@ -43,8 +47,8 @@
                 <div flex-gt-xs="50">
                     <div flex layout-margin>
                         <span class="strong-title">Orçamento</span>
-                        <md-input-container placeholder="asdasd" style="margin:0 !important;" class="md-block" flex>
-                            <input type="number" min="1" max="99999" ng-model="model.filter.budget" flex>
+                        <md-input-container style="margin:16px 0 0 0 !important;" class="md-block" flex>
+                            <input ui-money-mask currency-symbol="R$ " type="text" maxlength="15" ng-model="model.filter.budget" flex>
                         </md-input-container>
                     </div>
                 </div>
@@ -67,8 +71,8 @@
                 </div>
             </div>
 
-            <div layout="row" flex>
-                <md-button style="background-color: #00a1f6" flex class="md-raised md-primary" ng-click="findItineraryGuide()">
+            <div layout="row" layout-align="center center" flex>
+                <md-button style="background-color: #00a1f6; max-width: 400px; height: 60px" flex class="md-raised md-primary" ng-click="findItineraryGuide()">
                     Buscar
                 </md-button>
             </div>

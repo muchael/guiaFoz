@@ -3,7 +3,8 @@ const deps = [
     require('angular-messages'),
     require('angular-animate'),
     require('angular-material'),
-    require('angular-ui-router')
+    require('angular-ui-router'),   
+    require('angular-input-masks')
 ];
 
 const angular = require('angular');
