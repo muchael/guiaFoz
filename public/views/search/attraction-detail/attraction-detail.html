@@ -1,42 +1,23 @@
-<md-toolbar md-scroll-shrink="" class="main-menu" style="min-height: 40px">
-    <div layout="row" layout-align="start center">
-        <md-button ng-click="closeDetailsSidenav()" class="md-accent">
-            Close this Sidenav
-        </md-button>
-    </div>
-</md-toolbar>
 
 <div alt="attraction_picture" ng-style="{'background-image':'url('+attraction.picture+')', 
                    'height': '230px',
                    'background-size': 'cover',
                    'background-position': '50%'}">
 
+    <div flex layout="row" layout-align="end start">
+
+        <md-button class="md-fab md-mini md-primary" ng-click="closeDetailsSidenav()"  aria-label="close">
+            <md-icon class="zmdi zmdi-close zmdi-hc-2x"></md-icon>
+        </md-button>
+    </div>
+
 </div>
 
 <div layout-margin>
     <h1> {{attraction.name}} </h1>
-    <p> {{attraction.duration}} </p>
-    <p> {{attraction.start_time}} </p>
-    <p> {{attraction.description}} </p>
-    <p> {{attraction.description}} </p>
-    <p> {{attraction.description}} </p>
-    <p> {{attraction.observations}} </p>
-    <p> {{attraction.adult_price}} </p>
-    <p> asdasd as</p>
-    <p> asdasd as</p>
-    <p> asdasd as</p>
-    <p> asdasd as</p>
-    <p> asdasd as</p>
-    <p> asdasd as</p>
-    <p> asdasd as</p>
-    <p> asdasd as</p>
-    <p> asdasd as</p>
-    <p> asdasd as</p>
-    <p> asdasd as</p>
-    <p> asdasd as</p>
-    <p> asdasd as</p>
-    <p> asdasd as</p>
-    <p> asdasd as</p>
-    <p> asdasd as</p>
-    <p> asdasd as</p>
+    <p ng-if="attraction.duration"> Tempo de duração: {{attraction.duration}} </p>
+    <p ng-if="attraction.start_time"> Horário: {{attraction.start_time}} </p>
+    <p ng-if="attraction.description"> Descrição: {{attraction.description}} </p>
+    <p ng-if="attraction.observations"> Observações {{attraction.observations}} </p>
+    <p ng-if="attraction.adult_price"> Preço: {{attraction.adult_price}} </p>
 </div>

@@ -73,7 +73,7 @@ module.exports = function SearchController($scope, $mdSidenav) {
 
     $scope.openDetailsSidenav = function (attraction) {
         $scope.attraction = attraction;
-        $mdSidenav('right').toggle();
+        $mdSidenav('right').open();
     }
     $scope.closeDetailsSidenav = function () {
         $mdSidenav('right').toggle();
