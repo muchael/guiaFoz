@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :api do
+    post 'attractions/query'
+  end
+
   resources :itineraries
   resources :tags
   resources :attractions
