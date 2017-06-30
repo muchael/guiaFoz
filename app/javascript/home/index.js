@@ -20,7 +20,7 @@ module.config(function($stateProvider, $urlRouterProvider, $STATES) {
     }).state($STATES.SEARCH, {
         url: '/search',
         templateUrl: '/views/search/search.html',
-        controller: 'AttractionDetailController'
+        controller: 'SearchController'
     });
 });
 

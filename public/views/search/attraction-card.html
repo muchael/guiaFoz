@@ -1,0 +1,25 @@
+<md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch style="width: 100%">
+    <md-card-content layout="row" layout-align="space-between">
+        <div>
+            <img ng-src="{{attraction.picture}}">
+        </div>
+        <div layout="column">
+            <div style="font-weight: bold">{{attraction.name}}</div>
+            <div style="margin-bottom: 20px;">
+                <md-icon class="zmdi zmdi-thumb-up zmdi-hc-2x selected-star"></md-icon>
+                <span class="md-subhead">2050</span>
+            </div>
+            <div>Endereço: Av das Cataratas, 1</div>
+            <div>Duração: {{attraction.duration}} horas</div>
+            <div>Valor: {{attraction.adult_price | currency:"R$ "}}*</div>
+        </div>
+        <md-card-actions layout="column">
+            <md-button class="md-icon-button" style="color: green" aria-label="Favorite">
+                <md-icon class="zmdi zmdi-check zmdi-hc-2x"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" style="color: red" aria-label="Settings">
+                <md-icon class="zmdi zmdi-close zmdi-hc-2x"></md-icon>
+            </md-button>
+        </md-card-actions>
+    </md-card-content>
+</md-card>
