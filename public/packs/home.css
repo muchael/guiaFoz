@@ -1,7 +1,15 @@
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}md-toolbar.main-menu {
+}html, body, .ng-scope {
+  height: 100%;
+}
+
+.strong-title {
+  font-weight: bold;
+}
+
+md-toolbar.main-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

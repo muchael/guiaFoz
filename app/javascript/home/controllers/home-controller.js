@@ -14,14 +14,14 @@ module.exports = function HomeController($scope, $mdSidenav, $state, $STATES) {
     };
 
     $scope.tags = [
-        {id: 1,name: 'Natureza'},
-        {id:2,name:'Gastronomia'},
-        {id:3,name:'Vida Noturna'},
-        {id:4,name:'Romântico'},
-        {id:5,name:'Aventura'},
-        {id:6,name:'Cultural'},
-        {id:7,name:'Família'},
-        {id:8,name:'Populares'}
+        {id: 1,name: 'Natureza', selected:false},
+        {id:2,name:'Gastronomia', selected:false},
+        {id:3,name:'Vida Noturna', selected:false},
+        {id:4,name:'Romântico', selected:false},
+        {id:5,name:'Aventura', selected:false},
+        {id:6,name:'Cultural', selected:false},
+        {id:7,name:'Família', selected:false},
+        {id:8,name:'Populares', selected:false}
         ];
 
     $scope.findItineraryGuide = function () {
