@@ -1,8 +1,14 @@
 const mod = require('../module');
 require('./search-controller.css');
+const moment = require('moment');
+
 module.exports = function SearchController($scope, $mdSidenav, $state, $http, $STATES) {
 
     $scope.loading = true;
+    $scope.attraction = {};
+    $scope.model = {
+        roteiro : []
+       };
 
     if(!$state.params.query) {
         $state.go($STATES.HOME);
@@ -15,15 +21,21 @@ module.exports = function SearchController($scope, $mdSidenav, $state, $http, $S
             },
             data: JSON.stringify($state.params.query)
         }).then(function(data) {
-            $scope.roteiro = data.data;
+            $scope.model.roteiro = data.data;
             $scope.loading = false;
         }, function() {
             $scope.loading = false;
         });
     }
 
-    $scope.attraction = {};
-    $scope.roteiro = [];
+    $scope.model = {
+        daySelected: ""
+    };
+
+    $scope.formatHm = function(duration) {
+
+        return moment(duration).format("hh:mm");
+    };
 
     $scope.toggleMenuSideNavHandler = function () {
         console.log("toggleMenuSideNavHandler");
@@ -34,14 +46,9 @@ module.exports = function SearchController($scope, $mdSidenav, $state, $http, $S
     $scope.openDetailsSidenav = function (attraction) {
         $scope.attraction = attraction;
         $mdSidenav('right').open();
-    }
+    };
     $scope.closeDetailsSidenav = function () {
         $mdSidenav('right').toggle();
     }
-
-
-
-
-
 
 };

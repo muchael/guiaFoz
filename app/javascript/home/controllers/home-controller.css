@@ -1,3 +1,7 @@
+*, *.before, *.after {
+    box-sizing: border-box;
+}
+
 md-toolbar.main-menu {
     display: flex;
     justify-content: center;
@@ -47,4 +51,13 @@ md-toolbar.main-menu {
 .ckeck-button input:checked + span {
     background: #55A4E2;
     color:#FFFFFF;
+}
+
+/******************/
+
+.content-home {
+    max-width: 430px;
+    padding: 15px 35px;
+    z-index: 2;
+    width: 100%;
 }
