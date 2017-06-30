@@ -1,7 +1,7 @@
 <md-card style="width: 100%">
     <md-card-content layout-gt-xs="row" ng-click="openDetailsSidenav(attraction); $event.stopPropagation()">
-        <div>
-            <img ng-src="{{attraction.picture}}">
+        <div layout="row" layout-align="center center">
+            <img ng-src="{{attraction.picture}}" style="max-width: 225px; max-height: 188px;">
         </div>
         <div flex layout="row">
             <div layout="column" layout-margin>
