@@ -60,3 +60,11 @@ md-toolbar.main-menu {
     background: #55A4E2;
     color:#FFFFFF;
 }
+
+.title-container {
+    text-align: center;
+    margin-top: -20px;
+    color: rgba(255, 255, 255, 0.87);
+    text-transform: uppercase;
+    font-weight: 100;
+}
