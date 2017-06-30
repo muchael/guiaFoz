@@ -1,69 +1,29 @@
 const mod = require('../module');
 require('./search-controller.css');
-module.exports = function SearchController($scope, $mdSidenav) {
+module.exports = function SearchController($scope, $mdSidenav, $state, $http, $STATES) {
 
-    $scope.attraction = {}
-    $scope.roteiro =
-        [ // dias
-            {
-                day: '2017-07-01',
-                periods: [ // manhã
-                    [ // lista de atrativos
-                        {
-                            id: 1,
-                            name: 'Cataratas do Iguaçu',
-                            duration: 2,
-                            start_time: new Date("June 29, 2017"),
-                            adult_price: 40,
-                            adults_only: false,
-                            picture: 'images/Cataratas.jpg',
-                            place: {
-                                id: 1,
-                                name: 'Cataratas do Iguaçu',
-                                picture: 'url',
-                                phone: '0800 450 277',
-                                website: 'www.cataratas.com'
-                            }
-                        }, // inicial
-                        {
-                            id: 2,
-                            name: 'Parque das Aves',
-                            duration: 2,
-                            start_time: new Date("June 29, 2017"),
-                            adult_price: 20,
-                            adults_only: false,
-                            picture: 'images/Cataratas.jpg',
-                            place: {
-                                id: 1,
-                                name: 'Cataratas do Iguaçu',
-                                picture: 'url',
-                                phone: '0800 450 277',
-                                website: 'www.cataratas.com'
-                            }
-                        }, // inicial
-                    ],
-                    [
-                        {
-                            id: 3,
-                            name: 'Itaipu Binacional',
-                            duration: 2,
-                            start_time: new Date("June 29, 2017"),
-                            adult_price: 20,
-                            adults_only: false,
-                            picture: 'images/Cataratas.jpg',
-                            place: {
-                                id: 1,
-                                name: 'Cataratas do Iguaçu',
-                                picture: 'url',
-                                phone: '0800 450 277',
-                                website: 'www.cataratas.com'
-                            }
-                        }
-                    ], // tarde
-                    [] // noite
-                ],
-            }
-        ];
+    $scope.loading = true;
+
+    if(!$state.params.query) {
+        $state.go($STATES.HOME);
+    } else {
+        $http({
+            method: 'POST',
+            url: '/api/attractions/query.json',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: JSON.stringify($state.params.query)
+        }).then(function(data) {
+            $scope.roteiro = data.data;
+            $scope.loading = false;
+        }, function() {
+            $scope.loading = false;
+        });
+    }
+
+    $scope.attraction = {};
+    $scope.roteiro = [];
 
     $scope.toggleMenuSideNavHandler = function () {
         console.log("toggleMenuSideNavHandler");

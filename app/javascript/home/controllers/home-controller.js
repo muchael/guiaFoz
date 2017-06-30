@@ -1,7 +1,7 @@
 const mod = require('../module');
 require('./home-controller.css');
 
-module.exports = function HomeController($scope, $mdSidenav) {
+module.exports = function HomeController($scope, $mdSidenav, $state, $STATES) {
 
     $scope.model = {
         filter: {
@@ -35,6 +35,7 @@ module.exports = function HomeController($scope, $mdSidenav) {
         });
 
         console.log($scope.model.filter);
+        $state.go($STATES.SEARCH, {query: $scope.model.filter});
     };
 
     /**
