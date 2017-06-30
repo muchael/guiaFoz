@@ -17,7 +17,8 @@
                 </div>
                 <div layout="row" layout-align="start center" style="font-size:13px; color:#949494; display:flex; align-items:center;">
                     <md-icon class="zmdi zmdi-thumb-up zmdi-hc-2x" style="margin:0 15px 0 0;" ng-click="!attraction.liked && likeAttraction(attraction, $event)"></md-icon>
-                    <span>{{attraction.likes}} pessoas curtiram</span>
+                    <span ng-if="attraction.likes == 1">{{attraction.likes}} pessoa curtiu</span>
+                    <span ng-if="attraction.likes != 1">{{attraction.likes}} pessoas curtiram</span>
                 </div>
 
                 <div layout="row" layout-wrap>

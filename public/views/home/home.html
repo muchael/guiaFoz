@@ -63,8 +63,8 @@
 
                 <div>
                     <div layout="row" layout-wrap layout-align="center center">
-                        <md-button ng-click="tag.selected = !tag.selected" ng-style="tag.selected && { 'background-color': '#7fd7ff' }" style="height: 35px; color:black; font-size: 10px; background-color: #efefef;"
-                            ng-repeat="tag in tags" class="md-raised md-primary">
+                        <md-button ng-click="tag.selected = !tag.selected" ng-style="{ 'background-color': tag.selected ? '#7fd7ff' : '#efefef' }" style="height: 35px; color:black; font-size: 10px; background-color: #efefef;"
+                            ng-repeat="tag in tags" class="md-raised">
                             {{tag.name}}
                         </md-button>
                     </div>
