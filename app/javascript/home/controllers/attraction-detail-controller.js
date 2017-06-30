@@ -1,5 +1,7 @@
 const mod = require('../module');
 
-module.exports = function AttractionDetailController($scope) {
+module.exports = function AttractionDetailController($scope, $mdSidenav) {
+
+
 
 };

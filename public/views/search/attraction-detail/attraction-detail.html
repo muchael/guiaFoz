@@ -1,0 +1,25 @@
+<md-toolbar md-scroll-shrink="" class="main-menu" style="min-height: 40px">
+    <div layout="row" layout-align="start center">
+        <md-button ng-click="toggleRight()" class="md-accent">
+            Close this Sidenav
+        </md-button>
+    </div>
+</md-toolbar>
+
+<div alt="attraction_picture" ng-style="{'background-image':'url('+attraction.picture+')', 
+                   'height': '230px',
+                   'background-size': 'cover',
+                   'background-position': '50%'}">
+
+</div>
+
+<div layout-margin>
+    <h1> {{attraction.name}} </h1>
+    <p> {{attraction.duration}} </p>
+    <p> {{attraction.start_time}} </p>
+    <p> {{attraction.description}} </p>
+    <p> {{attraction.description}} </p>
+    <p> {{attraction.description}} </p>
+    <p> {{attraction.observations}} </p>
+    <p> {{attraction.adult_price}} </p>
+</div>

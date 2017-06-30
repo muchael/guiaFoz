@@ -29,7 +29,7 @@ module.config(function($stateProvider, $urlRouterProvider, $mdDateLocaleProvider
     }).state($STATES.SEARCH, {
         url: '/search',
         templateUrl: '/views/search/search.html',
-        controller: 'AttractionDetailController'
+        controller: 'SearchController'
     });
 });
 
