@@ -7,6 +7,11 @@ json.array! @attractions_by_day do |day|
         json.place do
           json.extract! attraction.place, :id, :name, :picture, :phone, :website
         end
+        json.tags do
+          json.array! attraction.tags do |tag|
+            json.extract! tag, :id, :name
+          end
+        end
       end
     end
   end

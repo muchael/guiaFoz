@@ -1,7 +1,12 @@
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}html, body, .ng-scope {
+}*, *.before, *.after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body, .ng-scope {
   height: 100%;
 }
 
