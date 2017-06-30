@@ -1,4 +1,4 @@
-<md-card style="width: 100%">
+<md-card style="width: 100%;">
     <md-card-content layout-gt-xs="row" ng-click="openDetailsSidenav(attraction); $event.stopPropagation()">
         <div layout="row" layout-align="center center">
             <img ng-src="{{attraction.picture}}" style="height: 230px; width:310px; background-size: cover; background-position: 50%">
@@ -21,7 +21,7 @@
                     <span ng-if="attraction.likes != 1">{{attraction.likes}} pessoas curtiram</span>
                 </div>
 
-                <div layout="row" layout-wrap>
+                <div layout="row" flex layout-wrap>
                     <div ng-repeat="tag in attraction.tags" class="item-tag" style="margin-top: 5px;">
                         <span>{{tag.name}}</span>
                     </div>

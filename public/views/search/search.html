@@ -1,4 +1,4 @@
-<md-toolbar md-scroll-shrink="" class="main-menu md-whiteframe-4dp" style="background-color: #FFFFFF; height: 60px; z-index: 59">
+<md-toolbar md-scroll-shrink="" class="main-menu" style="background-color: #FFFFFF; height: 60px;">
     <div layout="row" layout-align="start center" style="padding: 0 10px;">
        <h4 style="color:#00a1f6;">Guia Foz</h4>
         <span flex></span>
@@ -8,7 +8,6 @@
         <md-button class="button-guide" aria-label="Fale conosco" style="color: #a2a2a2; height: 60px;">
             Fale conosco
         </md-button>
-
     </div>
 </md-toolbar>
 
@@ -20,7 +19,7 @@
                 <ng-include src="'/views/search/attraction-detail/attraction-detail.html'"></ng-include>
             </md-content>
         </md-sidenav>
-        <md-content flex layout-padding style="background-color: transparent">
+        <md-content flex layout-padding>
             <div>
                 <div>
                     <h2 style="text-align: center; text-transform: uppercase; color: #FFFFFF">O que fazer?</h2>
@@ -30,19 +29,19 @@
                         O GuiaFoz indica estes atrativos para você visitar durante sua estadia em Foz do Iguaçu. Selecione os passeios que deseja realizar.
                     </h4>
                 </div>
-                <!--<div layout="row" layout-wrap>-->
-                    <!--<div ng-repeat="roteiro in model.roteiro">-->
-                        <!--<md-button class="md-raised md-primary" ng-style="roteiro.selected && { 'background-color': '#7fd7ff' }" ng-click="roteiro.selected = !roteiro.selected" aria-label="Fale conosco" ng-model="model.daySelected">-->
-                            <!--{{roteiro.day | date : 'dd/MM/yyyy'}}-->
-                        <!--</md-button>-->
-                    <!--</div>-->
-                <!--</div>-->
+                <div layout="row" layout-wrap>
+                    <div ng-repeat="roteiro in model.roteiro">
+                        <md-button class="md-raised md-primary" ng-style="roteiro.selected && { 'background-color': '#7fd7ff' }" ng-click="roteiro.selected = !roteiro.selected" aria-label="Fale conosco" ng-model="model.daySelected">
+                            {{roteiro.day | date : 'dd/MM/yyyy'}}
+                        </md-button>
+                    </div>
+                </div>
                 <div ng-repeat="day in model.roteiro">
-                    <md-content style="background-color: transparent" layout-xs="column" layout="row" ng-repeat="attraction in day.periods[0]" ng-include="'views/search/attraction-card.html'">
+                    <md-content style="background-color: transparent; overflow: hidden;" layout-xs="column" layout="row" ng-repeat="attraction in day.periods[0]" ng-include="'views/search/attraction-card.html'">
                     </md-content>
-                    <md-content style="background-color: transparent" layout-xs="column" layout="row" ng-repeat="attraction in day.periods[1]" ng-include="'views/search/attraction-card.html'">
+                    <md-content style="background-color: transparent; overflow: hidden;" layout-xs="column" layout="row" ng-repeat="attraction in day.periods[1]" ng-include="'views/search/attraction-card.html'">
                     </md-content>
-                    <md-content style="background-color: transparent" layout-xs="column" layout="row" ng-repeat="attraction in day.periods[2]" ng-include="'views/search/attraction-card.html'">
+                    <md-content style="background-color: transparent; overflow: hidden;" layout-xs="column" layout="row" ng-repeat="attraction in day.periods[2]" ng-include="'views/search/attraction-card.html'">
                     </md-content>
                 </div>
             </div>
