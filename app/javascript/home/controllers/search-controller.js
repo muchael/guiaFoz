@@ -21,7 +21,8 @@ module.exports = function SearchController($scope, $mdSidenav, $state, $http, $S
             },
             data: JSON.stringify($state.params.query)
         }).then(function(data) {
-            $scope.model.roteiro = data.data;
+            $scope.model.itineraryId = data.data.itinerary_id;
+            $scope.model.roteiro = data.data.attractions;
             $scope.loading = false;
         }, function() {
             $scope.loading = false;

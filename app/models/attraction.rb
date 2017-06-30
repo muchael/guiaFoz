@@ -70,9 +70,9 @@ EOF
     end
 
     # agora que já listamos de maneira agrupada os atrativos, vamos salvar o itinerário
+    itinerary = Itinerary.new(start: arrival, end: departure)
 
     transaction do
-      itinerary = Itinerary.new(start: arrival, end: departure)
       itinerary.save
       flattened_days = attractions_by_day.map{|x| x[:periods].map{|y| y[0]}.select{|x| x}}.flatten.map{|x|
         time = AttractionTime.find(x.time_id)
@@ -80,6 +80,9 @@ EOF
       }
     end
 
-    attractions_by_day
+    {
+        itinerary_id: itinerary.id,
+        attractions: attractions_by_day
+    }
   end
 end
