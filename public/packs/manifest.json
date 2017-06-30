@@ -1,12 +1,9 @@
 {
-  "glyphicons-halflings-regular.eot": "http://localhost:8080/packs/glyphicons-halflings-regular.eot",
-  "glyphicons-halflings-regular.svg": "http://localhost:8080/packs/glyphicons-halflings-regular.svg",
-  "glyphicons-halflings-regular.ttf": "http://localhost:8080/packs/glyphicons-halflings-regular.ttf",
-  "glyphicons-halflings-regular.woff": "http://localhost:8080/packs/glyphicons-halflings-regular.woff",
-  "glyphicons-halflings-regular.woff2": "http://localhost:8080/packs/glyphicons-halflings-regular.woff2",
-  "home.css": "http://localhost:8080/packs/home.css",
-  "home.js": "http://localhost:8080/packs/home.js",
-  "Material-Design-Iconic-Font.ttf": "http://localhost:8080/packs/Material-Design-Iconic-Font.ttf",
-  "Material-Design-Iconic-Font.woff": "http://localhost:8080/packs/Material-Design-Iconic-Font.woff",
-  "Material-Design-Iconic-Font.woff2": "http://localhost:8080/packs/Material-Design-Iconic-Font.woff2"
+  "Material-Design-Iconic-Font.ttf": "/packs/Material-Design-Iconic-Font-b351bd62abcd96e924d9f44a3da169a7.ttf",
+  "Material-Design-Iconic-Font.woff": "/packs/Material-Design-Iconic-Font-d2a55d331bdd1a7ea97a8a1fbb3c569c.woff",
+  "Material-Design-Iconic-Font.woff2": "/packs/Material-Design-Iconic-Font-a4d31128b633bc0b1cc1f18a34fb3851.woff2",
+  "home.css": "/packs/home-f6e38d4642174c85c063.css",
+  "home.css.map": "/packs/home-f6e38d4642174c85c063.css.map",
+  "home.js": "/packs/home-ba86de5dc0a8da1b8e2f.js",
+  "home.js.map": "/packs/home-ba86de5dc0a8da1b8e2f.js.map"
 }
