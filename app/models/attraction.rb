@@ -1,4 +1,6 @@
 class Attraction < ApplicationRecord
+  attr_accessor :start_day
+
   belongs_to :place
 
   has_many :attraction_times
@@ -61,6 +63,7 @@ ORDER BY
 LIMIT 20
 EOF
         seen_ids.push(attractions[0] && attractions[0].id)
+        attractions.each{|x| x.day = day}
         attractions
       end
       {day: day, periods: times}
@@ -73,7 +76,7 @@ EOF
       itinerary.save
       flattened_days = attractions_by_day.map{|x| x[:periods].map{|y| y[0]}}.flatten.map{|x|
         time = AttractionTime.find(x.time_id)
-        ItineraryAttraction.create(itinerary: itinerary, attraction_time: time, start: Time.now) #FIXME
+        ItineraryAttraction.create(itinerary: itinerary, attraction_time: time, start: x.start_day)
       }
     end
   end
