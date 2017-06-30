@@ -63,7 +63,7 @@ ORDER BY
 LIMIT 20
 EOF
         seen_ids.push(attractions[0] && attractions[0].id)
-        attractions.each{|x| x.day = day}
+        attractions.each{|x| x.start_day = day}
         attractions
       end
       {day: day, periods: times}
@@ -74,10 +74,12 @@ EOF
     transaction do
       itinerary = Itinerary.new(start: arrival, end: departure)
       itinerary.save
-      flattened_days = attractions_by_day.map{|x| x[:periods].map{|y| y[0]}}.flatten.map{|x|
+      flattened_days = attractions_by_day.map{|x| x[:periods].map{|y| y[0]}.select{|x| x}}.flatten.map{|x|
         time = AttractionTime.find(x.time_id)
         ItineraryAttraction.create(itinerary: itinerary, attraction_time: time, start: x.start_day)
       }
     end
+
+    attractions_by_day
   end
 end
