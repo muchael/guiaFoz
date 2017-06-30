@@ -1,6 +1,9 @@
 const angular = require('angular');
 const module = require('./module');
-require('bootstrap/dist/css/bootstrap.css');
+require('jquery/dist/jquery');
+require('angular-material/angular-material.css');
+require('material-design-iconic-font/dist/fonts/Material-Design-Iconic-Font.woff');
+require('material-design-iconic-font/dist/css/material-design-iconic-font.css');
 
 module.constant('$STATES', {
     HOME: 'home',
@@ -17,7 +20,7 @@ module.config(function($stateProvider, $urlRouterProvider, $STATES) {
     }).state($STATES.SEARCH, {
         url: '/search',
         templateUrl: '/views/search/search.html',
-        controller: 'AttractionDetailController'
+        controller: 'SearchController'
     });
 });
 

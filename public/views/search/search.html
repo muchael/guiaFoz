@@ -1,1 +1,36 @@
-Search!
+<div layout="column" style="height: 500px;" ng-cloak>
+    <section layout="row" flex>
+        <md-sidenav class="md-sidenav-right" md-component-id="right" md-disable-backdrop md-whiteframe="4">
+            <md-content>
+                <ng-include src="'/views/search/attraction-detail/attraction-detail.html'"></ng-include>
+            </md-content>
+        </md-sidenav>
+        <md-content flex layout-padding>
+            <div>
+                
+                <div>
+                    <h2 style="text-align: center;">O que fazer?</h2>
+
+                </div>
+                <div ng-repeat="day in roteiro">
+                    <div style="padding-left: 30px;">Dia {{day.day | date: 'dd/MM/yyyy'}}</div>
+                    <div style="padding-left: 30px;">Manhã</div>
+                    <md-content class="md-padding" layout-xs="column" layout="row" ng-repeat="attraction in day.periods[0]" ng-include="'views/search/attraction-card.html'">
+                    </md-content>
+                    <div style="padding-left: 30px;">Tarde</div>
+                    <md-content class="md-padding" layout-xs="column" layout="row" ng-repeat="attraction in day.periods[1]" ng-include="'views/search/attraction-card.html'">
+                    </md-content>
+                    <div style="padding-left: 30px;">Noite</div>
+                    <md-content class="md-padding" layout-xs="column" layout="row" ng-repeat="attraction in day.periods[2]" ng-include="'views/search/attraction-card.html'">
+                    </md-content>
+
+                    <md-content>
+
+                    </md-content>
+                </div>
+            </div>
+        </md-content>
+
+    </section>
+
+</div>

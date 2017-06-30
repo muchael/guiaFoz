@@ -1,5 +1,8 @@
 const deps = [
-    require('angular-ui-bootstrap'),
+    require('angular-aria'),
+    require('angular-messages'),
+    require('angular-animate'),
+    require('angular-material'),
     require('angular-ui-router')
 ];
 
