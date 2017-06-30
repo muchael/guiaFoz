@@ -1,4 +1,4 @@
-<md-toolbar md-scroll-shrink="" class="main-menu" style="background-color: #FFFFFF;">
+<md-toolbar md-scroll-shrink="" class="main-menu" style="background-color: #FFFFFF; height: 60px;">
     <div layout="row" layout-align="start center" style="padding: 0 10px;">
        <h4 style="color:#00a1f6;">Guia Foz</h4>
         <span flex></span>
@@ -11,10 +11,6 @@
 
     </div>
 </md-toolbar>
-
-<!--<div>-->
-    <!--<img src="">-->
-<!--</div>-->
 
 <div layout="column" ng-style="{'background-image':'url(images/background-list.png)'}">
     <section layout="row" flex >
@@ -29,21 +25,19 @@
                 <div>
                     <h2 style="text-align: center; text-transform: uppercase; color: #FFFFFF">O que fazer?</h2>
                 </div>
-                <div layout="row">
+                <div layout="row" layout-wrap>
                     <div ng-repeat="roteiro in model.roteiro">
-                        <md-button class="md-raised md-primary" aria-label="Fale conosco" ng-model="model.daySelected">
+                        <md-button class="md-raised md-primary" ng-style="roteiro.selected && { 'background-color': '#7fd7ff' }" ng-click="roteiro.selected = !roteiro.selected" aria-label="Fale conosco" ng-model="model.daySelected">
                             {{roteiro.day | date : 'dd/MM/yyyy'}}
                         </md-button>
                     </div>
                 </div>
                 <div ng-repeat="day in model.roteiro">
-                    <md-content class="md-padding" layout-xs="column" layout="row" ng-repeat="attraction in day.periods[0]" ng-include="'views/search/attraction-card.html'">
+                    <md-content layout-xs="column" layout="row" ng-repeat="attraction in day.periods[0]" ng-include="'views/search/attraction-card.html'">
                     </md-content>
-                    <div style="padding-left: 30px;">Tarde</div>
-                    <md-content class="md-padding" layout-xs="column" layout="row" ng-repeat="attraction in day.periods[1]" ng-include="'views/search/attraction-card.html'">
+                    <md-content  layout-xs="column" layout="row" ng-repeat="attraction in day.periods[1]" ng-include="'views/search/attraction-card.html'">
                     </md-content>
-                    <div style="padding-left: 30px;">Noite</div>
-                    <md-content class="md-padding" layout-xs="column" layout="row" ng-repeat="attraction in day.periods[2]" ng-include="'views/search/attraction-card.html'">
+                    <md-content  layout-xs="column" layout="row" ng-repeat="attraction in day.periods[2]" ng-include="'views/search/attraction-card.html'">
                     </md-content>
                 </div>
             </div>

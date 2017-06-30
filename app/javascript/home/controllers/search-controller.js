@@ -23,6 +23,11 @@ module.exports = function SearchController($scope, $mdSidenav, $state, $http, $S
         }).then(function(data) {
             $scope.model.itineraryId = data.data.itinerary_id;
             $scope.model.roteiro = data.data.attractions;
+
+            angular.forEach($scope.model.roteiro, function(roteiro){
+                roteiro.selected = false;
+            });
+
             $scope.loading = false;
         }, function() {
             $scope.loading = false;
