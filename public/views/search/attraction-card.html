@@ -1,7 +1,7 @@
 <md-card style="width: 100%">
     <md-card-content layout-gt-xs="row" ng-click="openDetailsSidenav(attraction); $event.stopPropagation()">
         <div layout="row" layout-align="center center">
-            <img ng-src="{{attraction.picture}}" style="max-width: 300px; max-height: 188px;">
+            <img ng-src="{{attraction.picture}}" style="height: 230px; width:310px; background-size: cover; background-position: 50%">
         </div>
         <div flex layout="row">
             <div layout="column" layout-margin>
@@ -15,9 +15,14 @@
                     <span style="margin-bottom: 5px;">Valor</span>
                     <span style="color: #00a1f6; font-weight: bold;">{{attraction.adult_price | currency:"R$ "}}</span>
                 </div>
+                <div>
+                    <md-button class="md-icon-button md-raised" style="background-color: #00a1f6;" aria-label="Favorite">
+                    <md-icon class="zmdi zmdi-thumb-up zmdi-hc-2x"></md-icon>
+                    </md-button>
+                </div>
 
-                <div layout="row">
-                    <div ng-repeat="tag in attraction.tags" class="item-tag">
+                <div layout="row" layout-wrap>
+                    <div ng-repeat="tag in attraction.tags" class="item-tag" style="margin-top: 5px;">
                         <span>{{tag.name}}</span>
                     </div>
                 </div>

@@ -2,10 +2,10 @@
     <div layout="row" layout-align="start center" style="padding: 0 10px;">
        <h4 style="color:#00a1f6;">Guia Foz</h4>
         <span flex></span>
-        <md-button aria-label="Sobre o guia foz" style="color: #a2a2a2; height: 60px;">
+        <md-button class="button-guide" aria-label="Sobre o guia foz" style="color: #a2a2a2; height: 60px;">
             Sobre o guia foz
         </md-button>
-        <md-button aria-label="Fale conosco" style="color: #a2a2a2; height: 60px;">
+        <md-button class="button-guide" aria-label="Fale conosco" style="color: #a2a2a2; height: 60px;">
             Fale conosco
         </md-button>
 
@@ -24,6 +24,11 @@
             <div>
                 <div>
                     <h2 style="text-align: center; text-transform: uppercase; color: #FFFFFF">O que fazer?</h2>
+                </div>
+                <div>
+                    <h4 style="text-align: center; color: #FFFFFF">
+                        O GuiaFoz indica estes atrativos para você visitar durante sua estadia em Foz do Iguaçu. Selecione os passeios que deseja realizar.
+                    </h4>
                 </div>
                 <div layout="row" layout-wrap>
                     <div ng-repeat="roteiro in model.roteiro">
